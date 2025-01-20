@@ -39,4 +39,51 @@ class Database {
             echo $this->error;
         }
     }
+    
+    //PREPARED STATEMENT WITH QUERY
+    public function query($sql){
+        $this->stmt = $this->conn->prepare($sql);
+    }
+    
+    //BIND PARAMS
+    public function bind($param, $value, $type = null){
+        if(is_null($type)){
+            $type = $this->checkType($value);
+        }
+        
+        $this->stmt->bindValue($param, $value, $type);
+    }
+    
+    //EXECUTE PREPARED STATEMENT
+    public function excecute(){
+        return $this->stmt->execute();
+    }
+    
+    //GET RESULT SET AS ARRAY
+    public function resultArray(){
+        $this->excecute();
+        return $this->stmt->fetchAll();//RETURN AS ASSOCIATIVE ARRAY
+        //return $this->stmt->fetchAll(PDO::FETCH_OBJ);//RETURN OBJECT
+    }
+    
+    public function resultSingle(){
+        $this->excecute();
+        return $this->stmt->fetch();//RETURN AS ASSOCIATIVE ARRAY
+        //return $this->stmt->fetch(PDO::FETCH_OBJ);//RETURN OBJECT
+    }
+    
+    public function rowCount(){
+        return $this->stmt->rowCount();
+    }
+    
+    private function checkType($value){
+        if(is_int($value))
+            return PDO::PARAM_INT;
+        else if(is_bool($value))
+            return PDO::PARAM_BOOL;
+        else if(is_null($value))
+            return PDO::PARAM_NULL;
+        else
+            return PDO::PARAM_STR;
+    }
 }

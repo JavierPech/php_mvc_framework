@@ -6,10 +6,10 @@
  * URL FORMAT - /controller/method/params
  */
 
-define('__ENTRYPOINT', "Pages");
+define('__ENTRYPOINT', "Home");
 class Core{
     //DEFAULT ENTRY POINT
-    protected $currentController = "Pages";
+    protected $currentController = "Home";
     protected $currentMethod = "index";
     protected $params = [];
     
