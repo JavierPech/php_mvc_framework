@@ -14,7 +14,7 @@ MVC Framework built with PHP + PDO for database interaction.
 There are 3 sample pages within this project, with Home controller being the entry point.
 - Home: The source code of this sample can be found under controllers/Home.php. This sample shows how to configure a new page, that is, controller + view. Each controller must have a folder under views. It would be good practice to have the same name as the controller for the view folder that corresponds to the controller.
 - DatabaseSelect: this sample shows how to do a select statement with the PDO class. Note as how the constructor for this controller is used to instantiate the Database connection.
-- DatabaseInsert: Still in development.
+- DatabaseInsert: documentation in progress.
 
 [HOW TO CHANGE THE ENTRY POINT]
 - The default entry point for the framework is Home.php controller.
@@ -33,7 +33,8 @@ There are 3 sample pages within this project, with Home controller being the ent
 - The php file for a view must only contain whats inside the <body> tags of an html file as the header.php and footer.php already incorporate the necessary structure.
 - To access a new page, simply call it in your addres bar with the same name of the file WITHOUT THE .PHP EXTENSIONS i.e: http://localhost/php_mvc_framework/Home
 
-
+[How To Use Database Samples]
+- Documentation in progress.
 
 
 .htaccess

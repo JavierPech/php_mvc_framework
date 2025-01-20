@@ -7,8 +7,10 @@ class DatabaseInsert extends Controller{
     }
     
     public function index(){
-        
-        $this->view("database_insert/index");
+        $data = [
+            "title" => "Database Insert"
+        ];
+        $this->view("database_insert/index", $data);
     }
     
     public function insertRecord(){
