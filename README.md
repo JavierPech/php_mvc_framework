@@ -1,5 +1,5 @@
 # php_mvc_framework
-MVC Framework built with PHP + PDO for database interaction.
+MVC Framework built with PHP + BOOTSTRAP 5 + PDO Class for database interaction.
 
 [CONFIGURATION]
 - app/config/config.php: Change database credentials to suit your project. Make sure to define the SITENAME & URLROOT here. Example of URLROOT is provided.
