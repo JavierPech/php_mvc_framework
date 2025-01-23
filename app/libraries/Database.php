@@ -22,9 +22,11 @@ class Database {
         //SET DSN
         $dsn = "mysql:host=" .$this->host. ";dbname=" .$this->db;
         $options = array(
-            PDO::ATTR_PERSISTENT => true,
             //MAITAIN A PERSISTEN CONNECTION TO ENHANCE PERFORMANCE
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            PDO::ATTR_PERSISTENT => true,
+            //ERRMODE SHOULD ALWAYS BE IN SILENT IN DEPLOYMENT
+            //FOR DEBUGGING PURPOSES, CAN CHANGE TO WARNING OR EXCEPTION
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_SILENT
             //THERE ARE 3 MODES
             //ERRMODE_SILENT
             //ERRMODE_WARNING
